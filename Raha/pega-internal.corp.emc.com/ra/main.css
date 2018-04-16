@@ -1,0 +1,38 @@
+﻿body, html {
+    height: 100%;
+}
+.bg { 
+    /* The image used */
+    background-image: url("../code.png");
+
+    /* Full height */
+ min-height:100%;
+
+    /* Center and scale the image nicely */
+
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+
+
+
+}   
+
+.im{
+float: right;
+width:initial;
+ height:initial;
+
+}
+
+
+
+.navbar-nav.mr-auto li a {
+    color: white;
+}
+
+.navbar-nav.mr-auto ul li a {
+    color: black;
+}
+
+
