@@ -30,6 +30,7 @@
         document.getElementById(document.getElementById(el.id).getAttribute("href").substr(1)).style.display = "block";
         document.getElementById('myenDiv').style = "display:none";
         document.getElementById('Label1').style = "display:none";
+
     }
 </script>
 
@@ -97,39 +98,63 @@
                         <li><a class="nav-link" target="_blank" href="https://emc.moveinsync.com/EMCBlr/employee.jsp#EmployeeLogin">MoveInSync Cab</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
-                    <a class="nav-link" target="_blank" href="http://intranet.dell.com/it/Operations/MIM/Lists/Submit%20a%20MIM%20Alert%20Task%20Production/New_MIMA.aspx">MIM<span class="sr-only">(current)</span></a>
+                         <a href="#" class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">VIOT/MIM<span class="caret"></span></a>
+                    <ul class="dropdown-menu">   
+                        <li><a class="nav-link" target="_blank" href="http://intranet.dell.com/it/Operations/MIM/Lists/Submit%20a%20MIM%20Alert%20Task%20Production/New_MIMA.aspx">MIM(OLD)</a></li>
+                        <li><a class="nav-link" target="_blank" href="https://it.one.dell.com/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fit%2Eone%2Edell%2Ecom">MIM SharePoint</a></li>
+                        <li><a class="nav-link" target="_blank" href=" https://it.one.dell.com/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fit%2Eone%2Edell%2Ecom">VITOC (IT View)  </a></li>
+                        <li><a class="nav-link" target="_blank" href=" https://it.one.dell.com/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fit%2Eone%2Edell%2Ecom">Prod MIM Alert Request  </a></li>
+                        <li><a class="nav-link" target="_blank" href=" https://it.one.dell.com/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fit%2Eone%2Edell%2Ecom">NON Prod MIM Alert Request </a></li>
+                    </ul>
+
                 </li>
                 <li class="dropdown">
                     <a href="#" class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">VCE<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-
-                        <li><a class="nav-link" target="_blank" href="../docs/HLA - ACT and xACT 4.0 PROD - FINAL.PDF">ARC Digram</a></li>
-                        <li><a class="nav-link" target="_blank" href="../docs/C3 HLA 5_17 prodv3.pdf">C3 HLA Digram</a></li>
-                        <li><a class="nav-link" href="ActApplicationDetails.aspx?act=XACT">xACT Application Details</a></li>
-                        <li><a class="nav-link" href="ActApplicationDetails.aspx?act=ACT">ACT Application Details</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://xact.emc.com/act/dct">Advanced Configuration Tool (ACT)</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://xact.emc.com/dnm/design-base-app/workspace.my-designs">xACT Black</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://xact.emc.com/dnm/dea/#/designElement">xACT Blue</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://xact.emc.com/BOE/BI">XACT-BOBJ application</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://c3.admin.vce.com/c3/admin-app/active">C3-Customer Configuration Center (Admin application)</a></li>
-                        <%--<li><a class="nav-link" target="_blank" href="https://wiki.ent.vce.com/dashboard.action">Wiki application</a></li>--%>
-                        <li><a class="nav-link" target="_blank" href="http://vcerpconfig03.isus.emc.com:1100/logviewer/applogs.jsp">Server urls</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://xact.emc.com/dnm/design-base-app/workspace.my-designs">ACT- Design based(Black application)</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://zabbix.isus.emc.com/dashboard.php">Zabbix</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://rpm.newrelic.com/accounts/1471659/applications">New Relic</a></li>
-                        <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">Patching URLs</a>
+                        <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">Architecture Diagrams</a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" target="_blank" href="https://patchweb.corp.emc.com/windows/Servers_Windows_Client_Accesslist.asp">Windows</a></li>
-                                <li><a class="nav-link" target="_blank" href="https://patchweb.corp.emc.com/rhel/Servers_Production_RHEL_Client_Accesslist.asp">Linux</a></li>
-                                <li><a class="nav-link" target="_blank" href="https://it.one.dell.com/sites/ITOps_RiskManagement/_layouts/15/start.aspx#/">Patching Dates</a></li>
+                                <li><a class="nav-link" target="_blank" href="../docs/HLA - ACT and xACT 4.0 PROD - FINAL.PDF">ACT Digram</a></li>
+                                <li><a class="nav-link" target="_blank" href="../docs/C3 HLA 5_17 prodv3.pdf">C3 HLA Digram</a></li>
                             </ul>
                         </li>
-                        <li><a class="nav-link" target="_blank" href="https://c3.vce.com/survey-design-app/surveys/list">C3-Customer Configuration Center (Survey configuration tool)</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://rpm.newrelic.com/public/charts/2nq9M9y8Luo">Thread Monitor vcerpcommon01</a></li>
-                        <li><a class="nav-link" target="_blank" href="http://act-healthcheck.cec.lab.emc.com/healthcheck/">Health check </a></li>
-                        <li><a class="nav-link" target="_blank" href="http://10.105.0.20:900/">DMZ Firewall access</a></li>
+                        <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">ACT</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="ActApplicationDetails.aspx?act=ACT">ACT Application Details</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://xact.emc.com/act/dct">Advanced Configuration Tool (ACT)</a></li>
+                            </ul>
+
+                            <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">XACT</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="ActApplicationDetails.aspx?act=XACT">xACT Application Details</a></li>
+                                    <li><a class="nav-link" target="_blank" href="https://xact.emc.com/dnm/design-base-app/workspace.my-designs">xACT Black</a></li>
+                                    <li><a class="nav-link" target="_blank" href="https://xact.emc.com/dnm/dea/#/designElement">xACT Blue</a></li>
+                                    <li><a class="nav-link" target="_blank" href="https://xact.emc.com/BOE/BI">XACT-BOBJ application</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="nav-link" target="_blank" href="https://c3.admin.vce.com/c3/admin-app/active">C3-Customer Configuration Center (Admin application)</a></li>
+                            <%--<li><a class="nav-link" target="_blank" href="https://wiki.ent.vce.com/dashboard.action">Wiki application</a></li>--%>
+                            <li><a class="nav-link" target="_blank" href="http://vcerpconfig03.isus.emc.com:1100/logviewer/applogs.jsp">Server urls</a></li>
+                            <li><a class="nav-link" target="_blank" href="https://zabbix.isus.emc.com/dashboard.php">Zabbix</a></li>
+                            <li><a class="nav-link" target="_blank" href="https://rpm.newrelic.com/accounts/1471659/applications">New Relic</a></li>
+                            <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">Patching URLs</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" target="_blank" href="https://patchweb.corp.emc.com/windows/Servers_Windows_Client_Accesslist.asp">Windows</a></li>
+                                    <li><a class="nav-link" target="_blank" href="https://patchweb.corp.emc.com/rhel/Servers_Production_RHEL_Client_Accesslist.asp">Linux</a></li>
+                                    <li><a class="nav-link" target="_blank" href="https://it.one.dell.com/sites/ITOps_RiskManagement/_layouts/15/start.aspx#/">Patching Dates</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="nav-link" target="_blank" href="https://c3.vce.com/survey-design-app/surveys/list">C3-Customer Configuration Center (Survey configuration tool)</a></li>
+                            <li><a class="nav-link" target="_blank" href="https://loginsight.isus.emc.com/s/fw0jsp ">Loginsight</a></li>
+                            <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">ThreadMonitoring</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" target="_blank" href="https://rpm.newrelic.com/public/charts/2nq9M9y8Luo">Thread Monitor vcerpcommon01</a></li>
+                                    <li><a class="nav-link" target="_blank" href="https://rpm.newrelic.com/public/charts/lhSosx9Umm">Thread Monitor vcerpcommon02</a></li>
+                                    <li><a class="nav-link" target="_blank" href="https://rpm.newrelic.com/public/charts/1O5xVxx1ilG">Thread Monitor vcerpcommon03</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="nav-link" target="_blank" href="http://act-healthcheck.cec.lab.emc.com/healthcheck/">Health check </a></li>
+                            <li><a class="nav-link" target="_blank" href="http://10.105.0.20:900/">DMZ Firewall access</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#" class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Remote Desktop<span class="caret"></span></a>
@@ -160,18 +185,27 @@
                                 <li><a class="nav-link" target="_blank" href="https://bpmappprd08.isus.emc.com:8453/logviewer/8443.jsp">IMS08</a></li>
                             </ul>
                         </li>
-                        <li><a class="nav-link" href="www.google.com">Time Converter</a></li>
+                        <li><a class="nav-link" target="_blank"  href="http://www.thetimezoneconverter.com/" >Time Converter</a></li>
+                        <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">IMS</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" target="_blank" href="https://bpmappdev01.isus.emc.com:8443/prweb/PRServlet">IMS Development</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://bpmappstg01.isus.emc.com:8443/prweb/PRServlet">IMS Stage</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://bpmappprf01.isus.emc.com:8443/prweb/PRServlet">IMS Performance</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://bpmapptst01.isus.emc.com:8443/prweb/PRServlet">IMS Test</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://bpmappprd01.isus.emc.com:8443/prweb/PRServlet">IMS Production</a></li>
+                            </ul>
 
-                        <li><a class="nav-link" target="_blank" href="https://bpmappdev01.isus.emc.com:8443/prweb/PRServlet">IMS Development</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://bpmappstg01.isus.emc.com:8443/prweb/PRServlet">IMS Stage</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://bpmappprf01.isus.emc.com:8443/prweb/PRServlet">IMS Performance</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://bpmapptst01.isus.emc.com:8443/prweb/PRServlet">IMS Test</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://bpmappprd01.isus.emc.com:8443/prweb/PRServlet">IMS Production</a></li>
+                        </li>
+                        <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">NSP</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" target="_blank" href="https://nasappdev02.isus.emc.com:8443/prweb/PRServlet">NSP Devlopment</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://nasapptst02.isus.emc.com:8443/prweb/PRServlet">NSP Test</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://nasappprf02.isus.emc.com:8443/prweb/PRServlet">NSP Performance</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://nasappprd01.isus.emc.com:8443/prweb/PRServlet/">NSP Production</a></li>
+                            </ul>
+                        </li>
                         <li><a class="nav-link" target="_blank" href="https://emcservice.my.salesforce.com/00Oj0000000bnIe">SFDC OMNI Presence Report</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://nasappdev02.isus.emc.com:8443/prweb/PRServlet">NSP Devlopment</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://nasapptst02.isus.emc.com:8443/prweb/PRServlet">NSP Test</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://nasappprf02.isus.emc.com:8443/prweb/PRServlet">NSP Performance</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://nasappprd01.isus.emc.com:8443/prweb/PRServlet/">NSP Production</a></li>
+
                         <li><a class="nav-link" target="_blank" href="https://supportportal.cfcp.isus.emc.com/index.html#/portal/dashboard/">AIC support portal link</a></li>
 
                     </ul>
@@ -196,23 +230,23 @@
                 </li>
 
                 <li><a class="nav-link" href="roster.aspx">Roster</a></li>
-                <li class="dropdown">
-                    <asp:LinkButton ID="LinkButton2" CssClass="nav-link" runat="server">Schedule Changes </asp:LinkButton>
-                </li>
+
+                <li><a class="nav-link" href="ScheduleChanges.aspx">ScheduleChanges</a></li>
             </ul>
 
             <asp:ScriptManager ID="ScriptManager1" runat="server"
-                EnablePageMethods="true" >
+                EnablePageMethods="true">
             </asp:ScriptManager>
 
             <asp:TextBox CssClass="search-query span2" placeholder="Search" ID="txtContactsSearch" runat="server" onvaluechanged="txtContactsSearch_ValueChanged" OnTextChanged="Button1_Click1" AutoPostBack="true"></asp:TextBox>
             <ajaxToolkit:AutoCompleteExtender ServiceMethod="SearchCustomers"
                 MinimumPrefixLength="2"
                 CompletionInterval="100" EnableCaching="False" CompletionSetCount="10"
-                TargetControlID="txtContactsSearch" 
+                TargetControlID="txtContactsSearch"
                 ID="AutoCompleteExtender1" runat="server" FirstRowSelected="false" ServicePath="~/Home.aspx">
             </ajaxToolkit:AutoCompleteExtender>
             &nbsp;&nbsp;
+           
             <div>
                 <asp:Image ID="Image1" runat="server" CssClass="im" ImageUrl="~/pics/Del.png" />
             </div>
@@ -235,7 +269,7 @@
             <asp:Button CssClass="btn btn-primary my-2 my-sm-0" ID="Button2" runat="server" Text="Launch" OnClick="Button2_Click" />
 
         </div>
-        <asp:Label ID="Label1" CssClass="navbar-text" runat="server" Name="txt" Text="Search Result" Style="display: none;" onclick="ser1_ServerClick"  ForeColor="White" ></asp:Label>
+        <asp:Label ID="Label1" CssClass="navbar-nav" runat="server" Name="txt" Text="Search Result" Style="display: none;" onclick="ser1_ServerClick" ForeColor="White"></asp:Label>
 
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
