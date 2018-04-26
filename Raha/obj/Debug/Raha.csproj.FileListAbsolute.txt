@@ -19,3 +19,17 @@ C:\Users\gollar1\Documents\Pega\Raha\Raha\Raha\bin\EntityFramework.SqlServer.xml
 C:\Users\gollar1\Documents\Pega\Raha\Raha\Raha\bin\System.Data.SQLite.xml
 C:\Users\gollar1\Documents\Pega\Raha\Raha\Raha\obj\Debug\Raha.dll
 C:\Users\gollar1\Documents\Pega\Raha\Raha\Raha\obj\Debug\Raha.pdb
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\bin\Raha.dll
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\bin\Raha.pdb
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\bin\AjaxControlToolkit.dll
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\bin\EntityFramework.dll
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\bin\EntityFramework.SqlServer.dll
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\bin\System.Data.SQLite.dll
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\bin\System.Data.SQLite.EF6.dll
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\bin\System.Data.SQLite.Linq.dll
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\bin\EntityFramework.xml
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\bin\EntityFramework.SqlServer.xml
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\bin\System.Data.SQLite.xml
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\obj\Debug\Raha.csprojResolveAssemblyReference.cache
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\obj\Debug\Raha.dll
+C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\obj\Debug\Raha.pdb

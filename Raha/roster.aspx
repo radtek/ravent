@@ -2,6 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Panel ID="rosterPanel" runat="server" >
+        <asp:TextBox ID="TextBox3" TextMode="Password" runat="server" placeholder="Enter Key for Edit Access"></asp:TextBox>
+        <asp:Button ID="Button1" runat="server" Text="Validate" />
+        <br />
         <div>
             &nbsp;&nbsp;
                
@@ -17,9 +20,13 @@
                     <WeekendDayStyle BackColor="#CCCCFF" />
                 </asp:Calendar>
         </div>
-        <div style="position: relative; left: 300px; margin-top: -200px;">
+        <div style="position: relative; left: 300px; margin-top: -200px; width: 600px; height: 400px; overflow-y: auto">
             <asp:GridView ID="GridView1" runat="server"
-                AutoGenerateColumns="True" ShowFooter="True" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="Horizontal" EnableSortingAndPagingCallbacks="True" OnPageIndexChanging="GridView1_PageIndexChanging" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" PageSize="10" OnLoad="Page_Load">
+                AutoGenerateColumns="False" DataKeyNames="ID,DATE" ShowFooter="False" AllowPaging="False" CellPadding="4" GridLines="Horizontal" OnPageIndexChanging="GridView1_PageIndexChanging" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" PageSize="400" PagerStyle-Wrap="False" AutoGenerateEditButton="False" EditRowStyle-BackColor="#009999"
+                OnRowCancelingEdit="GridView1_RowCancelingEdit"
+                OnRowEditing="GridView1_RowEditing"
+                OnRowUpdating="GridView1_RowUpdating"
+                OnRowCreated="OnRowCreated" EnableSortingAndPagingCallbacks="False" Style="width: 600px;">
                 <EmptyDataTemplate>
                     Roster Not Available.
                 </EmptyDataTemplate>
@@ -33,6 +40,39 @@
                 <SortedAscendingHeaderStyle BackColor="#487575" />
                 <SortedDescendingCellStyle BackColor="#E5E5E5" />
                 <SortedDescendingHeaderStyle BackColor="#275353" />
+                <Columns>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <%--<asp:LinkButton ID="btnSelect" runat="server" CommandName="Select" Text="Select" />--%>
+                            <asp:LinkButton ID="btnEdit" runat="server" CommandName="Edit" Text="Edit" />
+                            <%--<asp:LinkButton ID="btnDelete" runat="server" CommandName="Delete" Text="Delete" />--%>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:LinkButton ID="btnUpdate" runat="server" CommandName="Update" Text="Update" />
+                            <asp:LinkButton ID="btnCancel" runat="server" CommandName="Cancel" Text="Cancel" />
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="id" HeaderText="ID" InsertVisible="false"
+                        ReadOnly="true" SortExpression="id" />
+                    <asp:BoundField DataField="name" HeaderText="NAME" InsertVisible="false"
+                        ReadOnly="true" SortExpression="name" />
+
+                    <asp:TemplateField HeaderText="SHIFT" SortExpression="shift">
+                        <ItemTemplate>
+                            <%# Eval("shift") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtshift" runat="server" Text='<%# Bind("shift") %>' />
+                        </EditItemTemplate>
+                        <FooterTemplate>
+                            <asp:TextBox ID="txtshift1" runat="server" />
+                        </FooterTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="tower" HeaderText="TOWER" InsertVisible="false"
+                        ReadOnly="true" SortExpression="tower" />
+                    <asp:BoundField DataField="date" HeaderText="DATE" InsertVisible="false"
+                        ReadOnly="true" SortExpression="date" />
+                </Columns>
 
             </asp:GridView>
         </div>

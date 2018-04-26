@@ -13,6 +13,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Data;
+using System.Data;
+using System.Collections.Specialized;
+using System.Collections;
 
 namespace Raha
 {
@@ -25,8 +28,11 @@ namespace Raha
         SQLiteCommandBuilder commandBuilder;
         private DataSet dset = new DataSet();
         DataTable table = new DataTable();
+        int Auth;
         //SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\inetpub\wwwroot\ra\db.sqlite;Version=3;");
-        SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\Users\gollar1\Documents\Pega\Raha\Raha\Raha\Download\db.sqlite;Version=3;");
+        SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\Users\sivakots\documents\visual studio 2012\Projects\Raha\Raha\db.sqlite;Version=3;");
+        
+           // C:\Users\gollar1\Documents\Pega\Raha\Raha\Raha\Download\db.sqlite
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -117,8 +123,13 @@ namespace Raha
             // SQLiteDataReader reader = command.ExecuteReader();
             //SQLiteDataAdapter sd
             //GetData(command.CommandText, dbconn);
-            GetData(DateTime.Today.Month.ToString(), dbconn);
-            dbconn.Close();
+            TextBox3.Attributes["value"] = TextBox3.Text;
+            if (!IsPostBack)
+            {
+                GetData(DateTime.Today.Month.ToString(), dbconn);
+                
+            } dbconn.Close();
+            //Auth = 0;
         }
                 private void GetData(string selectCommand, SQLiteConnection dbconn)
         {
@@ -162,6 +173,132 @@ namespace Raha
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
+      
+            getSQL();
+        }
+        
+
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            GetData(DateTime.Today.Month.ToString(), dbconn);
+        }
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridView1.EditIndex = e.NewEditIndex;
+
+getSQL();
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridView1.EditIndex = -1;
+
+           getSQL();
+        }
+
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            GridViewRow row = this.GridView1.Rows[e.RowIndex];
+            var newValues = this.GetValues(row);
+
+
+            using (SQLiteCommand cmd = new SQLiteCommand("UPDATE shift SET shift = @shift WHERE (empid = @id and date=@date)", dbconn))
+            {
+                cmd.Parameters.AddWithValue("shift", newValues["shift"]);
+                cmd.Parameters.AddWithValue("id", GridView1.DataKeys[row.RowIndex]["ID"]);
+                cmd.Parameters.AddWithValue("date", GridView1.DataKeys[row.RowIndex]["DATE"]);
+                //cmd.Parameters.AddWithValue("NAME", newValues["NAME"]);
+
+                //cmd.Parameters.AddWithValue("TOWER", newValues["TOWER"]);
+
+                //cmd.Parameters.AddWithValue("SHIFT", GridView1.DataKeys[row.RowIndex]["ID"]);
+                //cmd.Parameters.AddWithValue("Phone", newValues["Phone"]);
+
+                try
+                {
+                    dbconn.Open();
+
+                    if (cmd.ExecuteNonQuery().Equals(1))
+                    {
+                        //  lblMsg.Text 
+
+                        GridView1.EditIndex = -1;
+
+                        getSQL();
+                    }
+                }
+                catch { }
+            }
+        }
+
+        /*  protected void GridView1_Sorting(object sender, GridViewSortEventArgs e)
+          {
+              DataTable dt = table as DataTable;
+              if (dt != null)
+              {
+                  DataView dataView = new DataView(dt);
+                  dataView.Sort = e.SortExpression + " " + GetSortDirection(e.SortDirection);
+                  GridView1.DataSource = dataView;
+                  GridView1.DataBind();
+              }
+             // dt.DefaultView.Sort = e.SortExpression + " " + GetSortDirection(e.SortDirection);
+              //GridView1.DataSource = dt;
+              //GridView1.DataBind();
+          }
+
+          private string GetSortDirection(SortDirection sortDirection)
+          {
+              string newSortDirection = string.Empty;
+              switch (sortDirection)
+              {
+                  case SortDirection.Ascending:
+                      newSortDirection = "ASC";
+                      break;
+                  case SortDirection.Descending:
+                      newSortDirection = "DESC";
+                      break;
+              }
+              return newSortDirection;
+          }
+
+          */
+        protected void OnRowCreated(object sender, GridViewRowEventArgs e)
+        {
+            check_auth();
+            if(Auth!=1)
+
+           // if (!TextBox3.Text.Equals("HerHighness"))
+                e.Row.Cells[0].Visible = false;
+        }
+        private IDictionary<string, object> GetValues(GridViewRow row)
+        {
+            IOrderedDictionary dictionary = new OrderedDictionary();
+
+            foreach (System.Web.UI.Control control in row.Controls)
+            {
+                DataControlFieldCell cell = control as DataControlFieldCell;
+
+                if ((cell != null) && cell.Visible)
+                {
+                    cell.ContainingField.ExtractValuesFromCell(dictionary, cell, row.RowState, true);
+                }
+            }
+
+            IDictionary<string, object> values = new Dictionary<string, object>();
+
+            foreach (DictionaryEntry de in dictionary)
+            {
+                values[de.Key.ToString()] = de.Value;
+            }
+
+            return values;
+        }
+
+        void getSQL()
+        {
+            if(dbconn.State== ConnectionState.Closed)
             dbconn.Open();
             command = new SQLiteCommand(dbconn);
             var dt = Calendar1.SelectedDate.ToShortDateString();
@@ -170,19 +307,21 @@ namespace Raha
             // dt = DateTime.Today.ToShortDateString();
             else
             {
-                command.CommandText = "select empid as ID,name as NAME ,shift as SHIFT,tower as TOWER from shift where date='" + dt + "'";
+                command.CommandText = "select empid as ID,name as NAME ,shift as SHIFT,tower as TOWER,date as DATE from shift where date='" + dt + "'";
                 GetData(command.CommandText, dbconn);
             }
             dbconn.Close();
-
         }
 
 
 
-        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+       void check_auth()
         {
-            GridView1.PageIndex = e.NewPageIndex;
-            GetData(DateTime.Today.Month.ToString(), dbconn);
+            string fileName = "key.conf";
+            string fl = Server.MapPath("~/Download/" + fileName);
+            var content = File.ReadAllText(fl);
+            if (content.Equals(TextBox3.Attributes["value"]))
+                Auth = 1;
         }
     }
 }

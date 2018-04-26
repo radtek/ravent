@@ -45,7 +45,7 @@ namespace Raha
             List<string> links = new List<string>();
             string line;
 
-            System.IO.StreamReader file = new System.IO.StreamReader(AppDomain.CurrentDomain.BaseDirectory + @"Home.aspx");
+            System.IO.StreamReader file = new System.IO.StreamReader(AppDomain.CurrentDomain.BaseDirectory + @"Raha.Master");
             while ((line = file.ReadLine()) != null)
             {
                 //Response.Write(line);  
@@ -65,7 +65,7 @@ namespace Raha
             while ((line = file.ReadLine()) != null)
             {
                 //Response.Write(line);  
-                Regex regexObj = new Regex("<td class=.(xl6714219|xl6417156).*?>(?<text>.*?)<.*?td>", RegexOptions.Singleline);
+                Regex regexObj = new Regex("<td class=.(xl6714219|xl6417156|xl6817156).*?>(?<text>.*?)<.*?td>", RegexOptions.Singleline);
                 var matches = regexObj.Matches(line);
                 foreach (Match m in matches)
                 {

@@ -38,6 +38,11 @@ width:initial;
     font-size:13px;
 }
 
+        .scrolling-table-container {
+            height: 378px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
 .font514219
 	{color:white;
 	font-size:11.0pt;

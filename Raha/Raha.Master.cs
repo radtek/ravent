@@ -107,21 +107,37 @@ namespace Raha
         [System.Security.Permissions.PermissionSet(System.Security.Permissions.SecurityAction.Demand, Name = "FullTrust")]
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            System.Web.UI.WebControls.Panel pn1 = (System.Web.UI.WebControls.Panel)ContentPlaceHolder1.FindControl("ACTPanel");
-            pn1.Visible = false;
-            pn1 = (System.Web.UI.WebControls.Panel)ContentPlaceHolder1.FindControl("XactPanel");
-            pn1.Visible = false;
+            System.Web.UI.WebControls.Panel pn1;
+
+            if (ContentPlaceHolder1.FindControl("ACTPanel") != null)
+            {
+                pn1 = (System.Web.UI.WebControls.Panel)ContentPlaceHolder1.FindControl("ACTPanel");
+                pn1.Visible = false;
+            }
+
+            if (ContentPlaceHolder1.FindControl("XactPanel") != null)
+            {
+                
+                pn1 = (System.Web.UI.WebControls.Panel)ContentPlaceHolder1.FindControl("XactPanel");
+                pn1.Visible = false; 
+            }
+            if (ContentPlaceHolder1.FindControl("rosterPanel") != null)
+            {
+                pn1 = (System.Web.UI.WebControls.Panel)ContentPlaceHolder1.FindControl("rosterPanel");
+                pn1.Visible = false;
+            }
+
             int k=0;
             //roster.Visible = false;
             myenDiv.Visible = false;
             //Label1.Visible = true;
             LiteralControl linkslist = new LiteralControl();
-            string divStart = @"<div id='linkslist' style='display:inline-block; background-color:LightBlue'><ul class='navbar-nav mr-auto'>";
+            string divStart = @"<div id='linkslist' style='display:inline-block; '><ul class='navbar-nav mr-auto'>";
             linkslist.Text += divStart;
 
             string line;
             
-            System.IO.StreamReader file = new System.IO.StreamReader(AppDomain.CurrentDomain.BaseDirectory + @"Home.aspx");
+            System.IO.StreamReader file = new System.IO.StreamReader(AppDomain.CurrentDomain.BaseDirectory + @"Raha.Master");
 
             while ((line = file.ReadLine()) != null)
             {
@@ -154,11 +170,11 @@ namespace Raha
   <td class=xl6614219 width=227 style='border-left:none;width:170pt'>Server Details</td>
   <td class=xl6614219 width=227 style='border-left:none;width:170pt'>IP Address</td>
  </tr><tr>";
-            linkslist.Text += tabStart;
+            
             while ((line = file.ReadLine()) != null)
             {
                 //Response.Write(line);  
-                Regex regexObj = new Regex("<td class=.(xl6714219|xl6417156).*?>(?<text>.*?)<.*?td>", RegexOptions.Singleline);
+                Regex regexObj = new Regex("<td class=.(xl6714219|xl6417156|xl6817156).*?>(?<text>.*?)<.*?td>", RegexOptions.Singleline);
                 if(k==1)
                 {
                    line= line.Replace('\uFFFD', ' ');
@@ -170,8 +186,11 @@ namespace Raha
                var matches = regexObj.Matches(line);
                 foreach (Match m in matches)
                 {
+
+                    
                     if (m.Groups["text"].Value.ToString().ToLower().Equals(txtContactsSearch.Text.ToLower()))
                     {
+                        linkslist.Text += tabStart;
                         linkslist.Text += line + "</br></br>";
                         k=1;
                     }

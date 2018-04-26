@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ActApplicationDetails.aspx" />
+    <None Include="Download\key.conf" />
     <Content Include="html\Act_ApplicationDetails.htm" />
     <Content Include="pics\bg.jpg" />
     <Content Include="pics\bgimg.jpg" />

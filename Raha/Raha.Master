@@ -235,7 +235,7 @@
             <asp:Button CssClass="btn btn-primary my-2 my-sm-0" ID="Button2" runat="server" Text="Launch" OnClick="Button2_Click" />
 
         </div>
-        <asp:Label ID="Label1" CssClass="navbar-text" runat="server" Name="txt" Text="Search Result" Style="display: none;" onclick="ser1_ServerClick" BackColor="#003366" ForeColor="White" BorderStyle="Solid" BorderColor="#003366"></asp:Label>
+        <asp:Label ID="Label1" CssClass="navbar-text" runat="server" Name="txt" Text="Search Result" Style="display: none;" onclick="ser1_ServerClick"  ForeColor="White" ></asp:Label>
 
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
