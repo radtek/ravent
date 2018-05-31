@@ -94,13 +94,13 @@
                         <li><a class="nav-link" target="_blank" href="https://sat.corp.emc.com/SAMS/logout">SAM portal</a></li>
                         <li><a class="nav-link" target="_blank" href="https://www.myworkday.com/dell/d/home.htmld">Work Day</a></li>
                         <li><a class="nav-link" target="_blank" href="https://icoe.corp.emc.com/classifiedmainpage">Classified portal</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://portal0012.globalview.adp.com/gvfrmwk3/emc.home#/areaaboutme">Global view</a></li>
+                        <li><a class="nav-link" target="_blank" href="https://portal.globalview.adp.com/emc">Global view</a></li>
                         <li><a class="nav-link" target="_blank" href="https://emc.moveinsync.com/EMCBlr/employee.jsp#EmployeeLogin">MoveInSync Cab</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                         <a href="#" class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">VIOT/MIM<span class="caret"></span></a>
-                    <ul class="dropdown-menu">   
+                    <a href="#" class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">VIOT/MIM<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
                         <li><a class="nav-link" target="_blank" href="http://intranet.dell.com/it/Operations/MIM/Lists/Submit%20a%20MIM%20Alert%20Task%20Production/New_MIMA.aspx">MIM(OLD)</a></li>
                         <li><a class="nav-link" target="_blank" href="https://it.one.dell.com/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fit%2Eone%2Edell%2Ecom">MIM SharePoint</a></li>
                         <li><a class="nav-link" target="_blank" href=" https://it.one.dell.com/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fit%2Eone%2Edell%2Ecom">VITOC (IT View)  </a></li>
@@ -185,7 +185,7 @@
                                 <li><a class="nav-link" target="_blank" href="https://bpmappprd08.isus.emc.com:8453/logviewer/8443.jsp">IMS08</a></li>
                             </ul>
                         </li>
-                        <li><a class="nav-link" target="_blank"  href="http://www.thetimezoneconverter.com/" >Time Converter</a></li>
+                        <li><a class="nav-link" target="_blank" href="http://www.thetimezoneconverter.com/">Time Converter</a></li>
                         <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">IMS</a>
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" target="_blank" href="https://bpmappdev01.isus.emc.com:8443/prweb/PRServlet">IMS Development</a></li>
@@ -214,8 +214,8 @@
 
                 <li class="dropdown"><a href="#" class="nav-link  dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Pega KPI<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="nav-link" target="_blank" href="http://corpusclb2b1.corp.emc.com/pegadashboard/Queues.aspx">KPI Dashboard</a></li>
-                        <li><a class="nav-link" target="_blank" href="http://durclb2bprd01/PegaDashboard/Notifications.aspx">KPI Dashboard New Link</a></li>
+                        <%--<li><a class="nav-link" target="_blank" href="http://corpusclb2b1.corp.emc.com/pegadashboard/Queues.aspx">KPI Dashboard</a></li>--%>                  
+                        <li><a class="nav-link" target="_blank" href="http://durclb2bprd01/PegaDashboard/">KPI Dashboard New Link</a></li>                       
                         <li><a class="nav-link" target="_blank" href="https://bpmappprf09.isus.emc.com:8443/prweb/PRServlet">Alert and Exception</a></li>
                         <li><a class="nav-link" target="_blank" href="https://corperoom02.corp.emc.com/eRoom/MandA/iBPAPegaCOE">Eroom link</a></li>
                     </ul>
@@ -228,9 +228,17 @@
                         <li><a class="nav-link" href="Contacts.aspx?contact=ZABBIX">Zabbix Contacts</a></li>
                     </ul>
                 </li>
-
-                <li><a class="nav-link" href="roster.aspx">Roster</a></li>
-
+                <li class="dropdown"><a href="#news" class="nav-link  dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Roster<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="roster.aspx">Roster</a></li>
+                        <li><a class="nav-link"  target="_blank" href="../html/Jan_month.htm">Jan_Month</a></li>
+                        <li><a class="nav-link"  target="_blank" href="../html/feb_month.htm">Feb_Month</a></li>
+                        <li><a class="nav-link"  target="_blank" href="../html/March_month.htm">march_Month</a></li>
+                        <li><a class="nav-link" target="_blank" href="../html/Apr_month.htm">April_Month</a></li>
+                        <li><a class="nav-link"  target="_blank" href="../html/may_month.htm">May_Month</a></li>
+                         <li><a class="nav-link"  target="_blank" href="../html/June_month.htm">June_Month</a></li>
+                    </ul>
+                </li>
                 <li><a class="nav-link" href="ScheduleChanges.aspx">ScheduleChanges</a></li>
             </ul>
 

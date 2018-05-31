@@ -110,9 +110,9 @@
             <tr>
                 <td>C3 Application</td>
                 <td>EngIT App VCE ACT</td>
-                <%--<td>VCE Mississippi - VCE.Mississippi@vce.com <br>--%>
+                <%--<td>VCE Mississippi - gsad.c3.hydra@emc.com <br>--%>
                 <td>
-                    <a href="mailto:VCE.Mississippi@vce.com">VCE.Mississippi@vce.com</a>
+                    <a href="mailto:gsad.c3.hydra@emc.com">gsad.c3.hydra@emc.com</a>
                     <br>
                     <pre></pre>
                     <%--CPSD CSE ShockAbsorber - CPSDCSEShockAbsorber@vce.com --%>

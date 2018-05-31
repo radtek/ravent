@@ -29,10 +29,8 @@ namespace Raha
         private DataSet dset = new DataSet();
         DataTable table = new DataTable();
         int Auth;
-        //SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\inetpub\wwwroot\ra\db.sqlite;Version=3;");
-        SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\Users\sivakots\documents\visual studio 2012\Projects\Raha\Raha\db.sqlite;Version=3;");
-        
-           // C:\Users\gollar1\Documents\Pega\Raha\Raha\Raha\Download\db.sqlite
+        //SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\inetpub\wwwroot\ra\Download\db.sqlite;Version=3;");
+        SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\Users\gollar1\Documents\Pega\Raha\ravent\Raha\Download\db.sqlite;Version=3;");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -324,4 +322,6 @@ getSQL();
                 Auth = 1;
         }
     }
+
+    
 }
