@@ -3,13 +3,81 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Panel ID="rosterPanel" runat="server">
         <asp:TextBox ID="TextBox3" TextMode="Password" runat="server" placeholder="Enter Key for Edit Access"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" Text="Validate" />
+        <asp:Button ID="Button1" runat="server" Text="Validate" OnClick="Button1_Click" />
         <br />
         <div>
             &nbsp;&nbsp;
                
 
-                <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="280px">
+                        &nbsp;&nbsp; 
+                    <asp:Panel ID="Createrosterpnl" runat="server" Visible="false">
+
+                        <asp:DropDownList CssClass="btn btn-secondary btn-sm dropdown-toggle" ID="DropDownList1" runat="server" Visible="false"></asp:DropDownList><br /><br />
+
+                        <asp:GridView ID="GridView2" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="Week Start" AutoGenerateColumns="false">
+
+                            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+
+                            <Columns>
+
+                                <asp:TemplateField HeaderText="Shift">
+                                    <EditItemTemplate>
+
+                                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+
+                                    </EditItemTemplate>
+
+                                    <ItemTemplate>
+
+                                        <asp:DropDownList ID="DropDownList3" runat="server">
+
+                                            <asp:ListItem Text="Afternoon" Value="0" />
+
+                                            <asp:ListItem Text="Evening" Value="1" />
+
+                                            <asp:ListItem Text="Morning" Value="2" />
+
+                                            <asp:ListItem Text="Graveyard" Value="3" />
+
+                                            <asp:ListItem Text="Leave" Value="4" />
+
+                                        </asp:DropDownList>
+
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+
+                            </Columns>
+
+                            <EditRowStyle BackColor="#999999" />
+
+                            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+
+                            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+
+                            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+
+                            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+
+                            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+
+                            <SortedAscendingCellStyle BackColor="#E9E7E2" />
+
+                            <SortedAscendingHeaderStyle BackColor="#506C8C" />
+
+                            <SortedDescendingCellStyle BackColor="#FFFDF8" />
+
+                            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+
+                        </asp:GridView>
+                        <br />
+                        <asp:Button ID="Button3" CssClass="btn btn-info" runat="server" Text="Assign Shift" OnClick="Button3_Click" />
+
+                        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+
+                    </asp:Panel>
+
+            <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="280px">
                     <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
                     <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
                     <OtherMonthDayStyle ForeColor="#999999" />
@@ -76,12 +144,11 @@
 
             </asp:GridView>
         </div>
-    </asp:Panel>
 
+    </asp:Panel>
+    <asp:Button CssClass="btn btn-primary" ID="Button2" runat="server" Text="Create roster" Visible="false" OnClick="Button2_Click" />
     
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:x="urn:schemas-microsoft-com:office:excel"
+<html
 xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
@@ -882,7 +949,7 @@ tags will be replaced.-->
 <!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
 <!----------------------------->
 
-<div id="Apr_month_22025" align=center x:publishsource="Excel">
+<div id="Apr_month_22025" align=center x:publishsource="Excel" visible="false" runat="server">
 
 <table border=0 cellpadding=0 cellspacing=0 width=5447 class=xl7122025
  style='border-collapse:collapse;table-layout:fixed;width:4080pt'>
@@ -4368,9 +4435,7 @@ tags will be replaced.-->
 </body>
 
 </html>
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:x="urn:schemas-microsoft-com:office:excel"
+<html
 xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
@@ -5173,7 +5238,7 @@ tags will be replaced.-->
 <!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
 <!----------------------------->
 
-<div id="Book1_22841" align=center x:publishsource="Excel">
+<div id="Book1_22841" align=center x:publishsource="Excel" visible="false" runat="server">
 
 <table border=0 cellpadding=0 cellspacing=0 width=7313 class=xl7022841
  style='border-collapse:collapse;table-layout:fixed;width:5476pt'>
@@ -8468,9 +8533,7 @@ tags will be replaced.-->
 </body>
 
 </html>
-    <html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:x="urn:schemas-microsoft-com:office:excel"
+    <html
 xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
@@ -9271,7 +9334,7 @@ tags will be replaced.-->
 <!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
 <!----------------------------->
 
-<div id="feb_month_3915" align=center x:publishsource="Excel">
+<div id="feb_month_3915" align=center x:publishsource="Excel" visible="false" runat="server">
 
 <table border=0 cellpadding=0 cellspacing=0 width=6750 class=xl703915
  style='border-collapse:collapse;table-layout:fixed;width:5061pt'>
@@ -12575,9 +12638,7 @@ tags will be replaced.-->
 </body>
 
 </html>
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:x="urn:schemas-microsoft-com:office:excel"
+<html
 xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
@@ -13421,7 +13482,7 @@ tags will be replaced.-->
 <!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
 <!----------------------------->
 
-<div id="March_month_31635" align=center x:publishsource="Excel">
+<div id="March_month_31635" align=center x:publishsource="Excel" visible="false" runat="server">
 
 <table border=0 cellpadding=0 cellspacing=0 width=5583 class=xl7031635
  style='border-collapse:collapse;table-layout:fixed;width:4189pt'>
@@ -16815,9 +16876,7 @@ tags will be replaced.-->
 </body>
 
 </html>
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:x="urn:schemas-microsoft-com:office:excel"
+<html
 xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
@@ -17634,7 +17693,7 @@ tags will be replaced.-->
 <!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
 <!----------------------------->
 
-<div id="may_month_9231" align=center x:publishsource="Excel">
+<div id="may_month_9231" align=center x:publishsource="Excel" visible="false" runat="server">
 
 <table border=0 cellpadding=0 cellspacing=0 width=5351 class=xl709231
  style='border-collapse:collapse;table-layout:fixed;width:4013pt'>
@@ -21025,9 +21084,7 @@ tags will be replaced.-->
 </body>
 
 </html>
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:x="urn:schemas-microsoft-com:office:excel"
+<html
 xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
@@ -21846,7 +21903,7 @@ tags will be replaced.-->
 <!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
 <!----------------------------->
 
-<div id="June_month_29362" align=center x:publishsource="Excel">
+<div id="June_month_29362" align=center x:publishsource="Excel" visible="false" runat="server">
 
 <table border=0 cellpadding=0 cellspacing=0 width=5568 class=xl7129362
  style='border-collapse:collapse;table-layout:fixed;width:4177pt'>

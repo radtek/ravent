@@ -132,6 +132,7 @@ namespace Raha
             myenDiv.Visible = false;
             //Label1.Visible = true;
             LiteralControl linkslist = new LiteralControl();
+            string tmplist="</br>";
             string divStart = @"<div id='linkslist' style='display:inline-block; '><ul class='navbar-nav mr-auto'>";
             linkslist.Text += divStart;
 
@@ -169,18 +170,28 @@ namespace Raha
   width:549pt'>Application Description</td>
   <td class=xl6614219 width=227 style='border-left:none;width:170pt'>Server Details</td>
   <td class=xl6614219 width=227 style='border-left:none;width:170pt'>IP Address</td>
- </tr><tr>";
+ </tr>";
             
             while ((line = file.ReadLine()) != null)
             {
                 //Response.Write(line);  
-                Regex regexObj = new Regex("<td class=.(xl6714219|xl6417156|xl6817156).*?>(?<text>.*?)<.*?td>", RegexOptions.Singleline);
-                if(k==1)
+                Regex regexObj = new Regex("<td class=.(xl6714219|xl6417156|xl6817156|xl6914219|xl6517156).*?>(?<text>.*?)<.*?td>", RegexOptions.Singleline);
+                if (line.Contains("<tr") || tmplist.Contains("<tr"))
                 {
                    line= line.Replace('\uFFFD', ' ');
-                    linkslist.Text += line ;
+                    tmplist += line ;
                     if(line.Contains("</tr>"))
-                    k=0;
+                    {
+                        if (k == 1)
+                        {
+                            linkslist.Text += tmplist;
+                            k = 0;
+                        }
+
+
+                        tmplist = "</br>";
+                    
+                    }
                 }
 
                var matches = regexObj.Matches(line);
@@ -188,10 +199,10 @@ namespace Raha
                 {
 
                     
-                    if (m.Groups["text"].Value.ToString().ToLower().Equals(txtContactsSearch.Text.ToLower()))
+                    if (m.Groups["text"].Value.ToString().ToLower().Contains(txtContactsSearch.Text.ToLower()))
                     {
                         linkslist.Text += tabStart;
-                        linkslist.Text += line + "</br></br>";
+                        //linkslist.Text += line + "</br></br>";
                         k=1;
                     }
                     //Console.WriteLine("URL: " + m.Groups["url"].Value + " -- Text = " + m.Groups["text"].Value);
@@ -200,8 +211,10 @@ namespace Raha
             }
             file.Close();
             if (linkslist.Text.Length > 100)
+            
                 Label1.Style["display"] = "block";
             this.Controls.Add(linkslist);
+           
             file.Close();
         }
         protected void Button2_Click(object sender, EventArgs e)

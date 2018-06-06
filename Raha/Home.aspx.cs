@@ -65,11 +65,12 @@ namespace Raha
             while ((line = file.ReadLine()) != null)
             {
                 //Response.Write(line);  
-                Regex regexObj = new Regex("<td class=.(xl6714219|xl6417156|xl6817156).*?>(?<text>.*?)<.*?td>", RegexOptions.Singleline);
+                Regex regexObj = new Regex("<td class=.(xl6714219|xl6417156|xl6817156|xl6914219|xl6517156).*?>(?<text>.*?)<.*?td>", RegexOptions.Singleline);
                 var matches = regexObj.Matches(line);
                 foreach (Match m in matches)
                 {
                     if (m.Groups["text"].Value.ToString().ToLower().Contains(prefixText.ToLower()))
+                        if(!links.Contains(m.Groups["text"].Value.ToString()))
                         links.Add(m.Groups["text"].Value.ToString());
                     //Console.WriteLine("URL: " + m.Groups["url"].Value + " -- Text = " + m.Groups["text"].Value);
                 }
