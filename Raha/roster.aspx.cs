@@ -28,9 +28,11 @@ namespace Raha
         SQLiteCommandBuilder commandBuilder;
         private DataSet dset = new DataSet();
         DataTable table = new DataTable();
+        DateTime dtnow = DateTime.Today;
         int Auth;
         //SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\inetpub\wwwroot\ra\Download\db.sqlite;Version=3;");
-        SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\Users\gollar1\Documents\Pega\Raha\ravent\Raha\Download\db.sqlite;Version=3;");
+        //SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\Users\gollar1\Documents\VCE\Raha\ravent\Raha\Download\db.sqlite;Version=3;");
+        SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\Download\db.sqlite;Version=3;");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,69 +55,69 @@ namespace Raha
             //command.ExecuteNonQuery();
             //command.ExecuteNonQuery();
             //command = new SQLiteCommand(dbconn);
-            //command.CommandText = "delete from shift where empid='1138560'";
+            //command.CommandText = "delete from shift where date like '7%' or date like '8%'";
             //command.ExecuteNonQuery();
-            /*command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','4/1/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','4/2/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','4/3/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','4/4/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','4/5/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','4/6/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','4/7/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','4/8/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','4/9/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','4/10/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','4/11/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','4/12/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','4/13/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','4/14/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','4/15/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','4/16/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','4/17/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','4/18/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','4/19/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','4/20/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Oncall','VCE','4/21/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','4/22/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Evening','VCE','4/23/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Evening','VCE','4/24/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Evening','VCE','4/25/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Evening','VCE','4/26/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Evening','VCE','4/27/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','4/28/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','4/29/2018')";
-            command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Evening','VCE','4/30/2018')";
-            command.ExecuteNonQuery();*/
-            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu ','Weeklyoff','VCE','3/31/2018')";
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Holiday','VCE','5/1/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Evening','VCE','5/2/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Evening','VCE','5/3/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Evening','VCE','5/4/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','5/5/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','5/6/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','5/7/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','5/8/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Evening','VCE','5/9/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','5/10/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','5/11/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Oncall','VCE','5/12/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','5/13/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','5/14/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','5/15/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','5/16/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','5/17/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Morning','VCE','5/18/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','5/19/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','5/20/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Leave','VCE','5/21/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Leave','VCE','5/22/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Leave','VCE','5/23/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','5/24/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','5/25/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','5/26/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Weeklyoff','VCE','5/27/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','5/28/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','5/29/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','5/30/2018')";
+            //command.ExecuteNonQuery();
+            //command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('1138560','Sravani Gangavarapu','Afternoon','VCE','5/31/2018')";
             //command.ExecuteNonQuery();
             //command.CommandText = "select empid,name,shift,tower from shift";
             // SQLiteDataReader reader = command.ExecuteReader();
@@ -313,14 +315,209 @@ getSQL();
 
 
 
-       void check_auth()
+       bool check_auth()
         {
             string fileName = "key.conf";
             string fl = Server.MapPath("~/Download/" + fileName);
             var content = File.ReadAllText(fl);
             if (content.Equals(TextBox3.Attributes["value"]))
+            {
                 Auth = 1;
+                return true;
+            }
+
+                return false;
+
         }
+
+
+               void insert_roster()
+       {
+
+           string sql = null,sql_check=null;
+           SQLiteDataReader reader;
+
+           DateTime firstDayThisMonth = new DateTime(dtnow.Year, dtnow.Month, 1);
+           DateTime firstDaynextMonth = firstDayThisMonth.AddMonths(1);
+           DateTime threemonths = firstDayThisMonth.AddMonths(3);
+           DateTime lastDaytwomonths = threemonths.AddDays(-1);
+           DateTime loopdate;
+           Int32 cnt;
+           //DateTime endOfLastDayNextMonth = firstDayPlusTwoMonths.AddTicks(-1);
+               string dt1=dtnow.AddMonths(-1).ToString("M/d/yyyy");
+               populate_employee_dropdown();
+               populate_weekgrid();
+               DropDownList1.Visible = true;
+               GridView2.Visible = true;
+
+           sql = "select empid as ID,name as NAME,tower as TOWER from shift where date='"+dt1+"'";
+           sql_check = "select count(*) from shift where date='" + firstDaynextMonth.ToString("M/d/yyyy") + "'";
+           try
+           {
+
+               command = new SQLiteCommand(dbconn);
+               if (dbconn.State == ConnectionState.Closed)
+                   dbconn.Open();
+               SQLiteCommand cmd = new SQLiteCommand(sql, dbconn);
+               SQLiteCommand cmd_check = new SQLiteCommand(sql_check, dbconn);
+               cnt = Convert.ToInt32(cmd_check.ExecuteScalar());
+               if (cnt < 1)
+               {
+               reader = cmd.ExecuteReader();
+
+
+                   while (reader.Read())
+                   {
+                       loopdate = firstDaynextMonth;
+
+                       while (loopdate <= lastDaytwomonths)
+                       {
+
+                           command.CommandText = "INSERT INTO shift (empid,name,tower,date) Values ('" + reader.GetValue(0) + "','" + reader.GetValue(1) + "','" + reader.GetValue(2) + "','" + loopdate.ToString("M/d/yyyy") + "')";
+                           if (loopdate.DayOfWeek == DayOfWeek.Saturday || loopdate.DayOfWeek == DayOfWeek.Sunday)
+                               command.CommandText = "INSERT INTO shift (empid,name,shift,tower,date) Values ('" + reader.GetValue(0) + "','" + reader.GetValue(1) + "','Weeklyoff','" + reader.GetValue(2) + "','" + loopdate.ToString("M/d/yyyy") + "')";
+
+                           command.ExecuteNonQuery();
+
+                           // MessageBox.Show("'" + reader.GetValue(0) + "' - '" + reader.GetValue(1) + "' - '" + reader.GetValue(2) + "'");
+                           loopdate = loopdate.AddDays(1);
+                       }
+                   }
+                   reader.Close();
+                   cmd.Dispose();
+                   dbconn.Close();
+               }
+           }
+           catch (Exception ex)
+           {
+               MessageBox.Show("Can not open connection ! " + ex);
+           }
+       }
+
+
+       protected void Button1_Click(object sender, EventArgs e)
+       {
+
+           if (check_auth())
+               Button2.Visible = true;
+
+       }
+
+       protected void Button2_Click(object sender, EventArgs e)
+       {
+           
+           insert_roster();
+           Createrosterpnl.Visible = true;
+           Button2.Visible = false;
+           TextBox3.Visible = false;
+           Button1.Visible = false;
+       }
+
+        void populate_employee_dropdown()
+        {
+
+            if (dbconn.State == ConnectionState.Closed)
+                dbconn.Open();
+            SQLiteCommand cmd = new SQLiteCommand("Select empid,name from shift where date='" + dtnow.ToString("M/d/yyyy")+"'", dbconn);
+
+    SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+
+    DataTable dt=new DataTable();
+    da.Fill(dt);
+
+    DropDownList1.DataTextField = "name";
+    DropDownList1.DataValueField = "empid";
+
+    DropDownList1.DataSource = dt;
+    DropDownList1.DataBind();
+    dbconn.Close();
+         }
+
+       void populate_weekgrid()
+        {
+
+
+            DataTable dt = new DataTable();
+            DataRow oItem = dt.NewRow();
+            DataRow dr = dt.NewRow();
+            DateTime firstDayThisMonth = new DateTime(dtnow.Year, dtnow.Month, 1);
+            DateTime loopdate = firstDayThisMonth.AddMonths(1);
+           BoundField bfield = new BoundField();
+
+            dt.Columns.Add("Week Start");
+
+            foreach (DataColumn col in dt.Columns)
+            {
+                bfield.DataField = col.ColumnName;
+                bfield.HeaderText = col.ColumnName;
+                GridView2.Columns.Add(bfield);
+            }
+            //dt.Columns.Add("Shift");
+
+
+
+
+            while (loopdate <= firstDayThisMonth.AddMonths(2))
+            {
+                if (loopdate.DayOfWeek == DayOfWeek.Sunday)
+                {
+
+                    oItem[0] = loopdate.AddDays(1).ToString("M/d/yyyy");
+                    dt.Rows.Add(oItem);
+                    oItem = dt.NewRow();
+
+                }
+                loopdate = loopdate.AddDays(1);
+
+
+            }
+            dt.AcceptChanges();
+            GridView2.DataSource = dt;
+            GridView2.DataBind();
+        }
+
+       protected void Button3_Click(object sender, EventArgs e)
+       {
+           DropDownList ddl;
+           DateTime loopweek = DateTime.MinValue;
+
+
+           String selectedValue=null;
+           int temp;
+           if (dbconn.State == ConnectionState.Closed)
+               dbconn.Open();
+           command = new SQLiteCommand(dbconn);
+           if (GridView2.Rows.Count > 0)
+           {
+               temp = GridView2.Rows[0].Cells.Count;
+               foreach (GridViewRow row in GridView2.Rows)
+               {
+                   for (int i = 0; i < temp; i++)
+                   {
+                       String header = GridView2.Columns[i].HeaderText;
+                       if(header=="Shift")
+                       {
+                           ddl = GridView2.Rows[i].FindControl("DropDownList3") as DropDownList;
+                           selectedValue = ddl.SelectedItem.Text.ToString();
+                       }
+                        String cellText = row.Cells[i].Text;
+                       //String cellText = row.Cells[i].Text;
+                       if(!string.IsNullOrEmpty(cellText))
+                        loopweek = DateTime.ParseExact(cellText, "M/d/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+
+                       while (loopweek.DayOfWeek != DayOfWeek.Saturday && !(loopweek == DateTime.MinValue))
+                       {
+
+                           command.CommandText = "update shift  set shift='" + selectedValue + "' where date='" + loopweek.ToString("M/d/yyyy") + "' and empid='" + DropDownList1.SelectedValue + "'";
+                           command.ExecuteNonQuery();
+                           loopweek = loopweek.AddDays(1);
+
+                       }
+                   }
+               }
+           }
+
+       }
     }
 
     
