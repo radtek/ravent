@@ -117,27 +117,44 @@ namespace Raha
 
             if (ContentPlaceHolder1.FindControl("XactPanel") != null)
             {
-                
+
                 pn1 = (System.Web.UI.WebControls.Panel)ContentPlaceHolder1.FindControl("XactPanel");
-                pn1.Visible = false; 
+                pn1.Visible = false;
             }
             if (ContentPlaceHolder1.FindControl("rosterPanel") != null)
             {
                 pn1 = (System.Web.UI.WebControls.Panel)ContentPlaceHolder1.FindControl("rosterPanel");
                 pn1.Visible = false;
             }
+            if (ContentPlaceHolder1.FindControl("ZabbixPanel") != null)
+            {
+                pn1 = (System.Web.UI.WebControls.Panel)ContentPlaceHolder1.FindControl("ZabbixPanel");
+                pn1.Visible = false;
+            }
 
-            int k=0;
+            if (ContentPlaceHolder1.FindControl("VcePanel") != null)
+            {
+
+                pn1 = (System.Web.UI.WebControls.Panel)ContentPlaceHolder1.FindControl("VcePanel");
+                pn1.Visible = false;
+            }
+            if (ContentPlaceHolder1.FindControl("PegaPanel") != null)
+            {
+                pn1 = (System.Web.UI.WebControls.Panel)ContentPlaceHolder1.FindControl("PegaPanel");
+                pn1.Visible = false;
+            }
+
+            int k = 0;
             //roster.Visible = false;
             myenDiv.Visible = false;
             //Label1.Visible = true;
             LiteralControl linkslist = new LiteralControl();
-            string tmplist="</br>";
-            string divStart = @"<div id='linkslist' style='display:inline-block; '><ul class='navbar-nav mr-auto'>";
+            string tmplist = "</br>";
+            string divStart = @"<div id='linkslist' style='display:inline-block; background-color: #000000'><ul class='navbar-nav mr-auto'>";
             linkslist.Text += divStart;
 
             string line;
-            
+
             System.IO.StreamReader file = new System.IO.StreamReader(AppDomain.CurrentDomain.BaseDirectory + @"Raha.Master");
 
             while ((line = file.ReadLine()) != null)
@@ -147,16 +164,18 @@ namespace Raha
                 var matches = regexObj.Matches(line);
                 foreach (Match m in matches)
                 {
-                    if (m.Groups["text"].Value.ToString().ToLower().Equals(txtContactsSearch.Text.ToLower()))
+                    //if (m.Groups["text"].Value.ToString().ToLower().Contains(txtContactsSearch.Text.ToLower()))
+                    if (m.Groups["text"].Value.ToString().ToLower().Contains(TextBox3.Text.ToLower()))
                     {
                         linkslist.Text += line + "</br></br>";
-                    }  
+                    }
                     //Console.WriteLine("URL: " + m.Groups["url"].Value + " -- Text = " + m.Groups["text"].Value);
                 }
 
             }
             string divEnd = @"</ul></div>";
             linkslist.Text += divEnd;
+            file.Close();
             file = new System.IO.StreamReader(AppDomain.CurrentDomain.BaseDirectory + @"ActApplicationDetails.aspx");
             string tabStart = @"<table border='1' cellpadding='0' cellspacing='0' width='1633' style='border-collapse: collapse; table-layout: fixed; width: 1224pt; background-color: white'>
  <col class=xl7514219 width=183 style='mso-width-source:userset;mso-width-alt:
@@ -171,16 +190,16 @@ namespace Raha
   <td class=xl6614219 width=227 style='border-left:none;width:170pt'>Server Details</td>
   <td class=xl6614219 width=227 style='border-left:none;width:170pt'>IP Address</td>
  </tr>";
-            
+
             while ((line = file.ReadLine()) != null)
             {
                 //Response.Write(line);  
-                Regex regexObj = new Regex("<td class=.(xl6714219|xl6417156|xl6817156|xl6914219|xl6517156).*?>(?<text>.*?)<.*?td>", RegexOptions.Singleline);
+                Regex regexObj = new Regex("<td class=.(xl6714219|xl6417156|xl6817156|xl6914219|xl6517156|xl6814219).*?>(?<text>.*?)<.*?td>", RegexOptions.Singleline);
                 if (line.Contains("<tr") || tmplist.Contains("<tr"))
                 {
-                   line= line.Replace('\uFFFD', ' ');
-                    tmplist += line ;
-                    if(line.Contains("</tr>"))
+                    line = line.Replace('\uFFFD', ' ');
+                    tmplist += line;
+                    if (line.Contains("</tr>"))
                     {
                         if (k == 1)
                         {
@@ -190,31 +209,68 @@ namespace Raha
 
 
                         tmplist = "</br>";
-                    
+
                     }
                 }
 
-               var matches = regexObj.Matches(line);
+                var matches = regexObj.Matches(line);
                 foreach (Match m in matches)
                 {
 
-                    
-                    if (m.Groups["text"].Value.ToString().ToLower().Contains(txtContactsSearch.Text.ToLower()))
+
+                    //if (m.Groups["text"].Value.ToString().ToLower().Contains(txtContactsSearch.Text.ToLower()))
+                    if (m.Groups["text"].Value.ToString().ToLower().Contains(TextBox3.Text.ToLower()))
                     {
                         linkslist.Text += tabStart;
                         //linkslist.Text += line + "</br></br>";
-                        k=1;
+                        k = 1;
                     }
                     //Console.WriteLine("URL: " + m.Groups["url"].Value + " -- Text = " + m.Groups["text"].Value);
                 }
 
             }
-            file.Close();
+
+            file = new System.IO.StreamReader(AppDomain.CurrentDomain.BaseDirectory + @"Contacts.aspx");
+
+
+            while ((line = file.ReadLine()) != null)
+            {
+                //Response.Write(line);  
+                Regex regexObj = new Regex("<td>(?<text>.*?)<.*?td>", RegexOptions.Singleline);
+                if (line.Contains("<tr") || tmplist.Contains("<tr"))
+                {
+                    line = line.Replace('\uFFFD', ' ');
+                    tmplist += line;
+                    if (line.Contains("</tr>"))
+                    {
+                        if (k == 1)
+                        {
+                            linkslist.Text += tmplist;
+                            k = 0;
+                        }
+                        tmplist = "</br>";
+
+                    }
+                }
+
+                var matches = regexObj.Matches(line);
+                foreach (Match m in matches)
+                {
+                    if (m.Groups["text"].Value.ToString().ToLower().Contains(TextBox3.Text.ToLower()))
+                    {
+                        linkslist.Text += tabStart;
+                        //linkslist.Text += line + "</br></br>";
+                        k = 1;
+                    }
+
+                }
+
+            }
             if (linkslist.Text.Length > 100)
-            
+
                 Label1.Style["display"] = "block";
             this.Controls.Add(linkslist);
-           
+
             file.Close();
         }
         protected void Button2_Click(object sender, EventArgs e)

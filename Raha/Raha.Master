@@ -242,7 +242,7 @@
                 <li><a class="nav-link" href="ScheduleChanges.aspx">ScheduleChanges</a></li>
             </ul>
 
-            <asp:ScriptManager ID="ScriptManager1" runat="server"
+<%--            <asp:ScriptManager ID="ScriptManager1" runat="server"
                 EnablePageMethods="true">
             </asp:ScriptManager>
 
@@ -253,13 +253,15 @@
                 TargetControlID="txtContactsSearch"
                 ID="AutoCompleteExtender1" runat="server" FirstRowSelected="false" ServicePath="~/Home.aspx">
             </ajaxToolkit:AutoCompleteExtender>
-            &nbsp;&nbsp;
-           
+            &nbsp;&nbsp;--%>
+            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            &nbsp;
+         <asp:Button ID="Button1" class="btn btn-outline-primary my-2 my-sm-0" runat="server" Visible="true" Text="Search" OnClick="Button1_Click1" />
+            &nbsp;
             <div>
                 <asp:Image ID="Image1" runat="server" CssClass="im" ImageUrl="~/pics/Del.png" />
             </div>
 
-            <asp:Button ID="Button1" class="btn btn-outline-primary my-2 my-sm-0" runat="server" Visible="false" Text="Search" OnClick="Button1_Click1" />
 
 
         </nav>
