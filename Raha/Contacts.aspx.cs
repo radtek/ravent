@@ -46,27 +46,27 @@ namespace Raha
         }
         public void DisplayVCEContacts()
         {
-            VcePanel.Visible = true;
+            VCEContacts.Visible = true;
             PegaPanel.Visible = false;
-            ZabbixPanel.Visible = false;
+            Zabbixcontacts.Visible = false;
         }
         public void DisplayPegaContacts()
         {
-            VcePanel.Visible = false;
+            VCEContacts.Visible = false;
             PegaPanel.Visible = true;
-            ZabbixPanel.Visible = false;
+            Zabbixcontacts.Visible = false;
         }
         public void DisplayZabbixContacts()
         {
-            VcePanel.Visible = false;
+            VCEContacts.Visible = false;
             PegaPanel.Visible = false;
-            ZabbixPanel.Visible = true;
+            Zabbixcontacts.Visible = true;
         }
         public void DisplayAllContacts()
         {
-            VcePanel.Visible = true;
+            VCEContacts.Visible = true;
             PegaPanel.Visible = true;
-            ZabbixPanel.Visible = true;
+            Zabbixcontacts.Visible = true;
         }
     }
 }

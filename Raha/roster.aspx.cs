@@ -31,8 +31,8 @@ namespace Raha
         DateTime dtnow = DateTime.Today;
         int Auth;
         //SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\inetpub\wwwroot\ra\Download\db.sqlite;Version=3;");
-        //SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\Users\gollar1\Documents\VCE\Raha\ravent\Raha\Download\db.sqlite;Version=3;");
-        SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\Users\sivakots\Documents\Visual Studio 2012\Projects\Raha-20180414T175030Z-001\Raha\Raha\Download\db.sqlite;Version=3;");
+        SQLiteConnection dbconn = new SQLiteConnection(@"Data Source=C:\Users\gollar1\Documents\Projects\Pega\Raha\ravent\Raha\Download\db.sqlite;Version=3;");
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
