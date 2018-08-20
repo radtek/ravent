@@ -43,34 +43,35 @@
 
 <body class="bg" runat="server" id="bd">
     <style>
-       .dropdown:hover>.dropdown-menu {
-  display: block;
-}
-
-       .navbar-nav.mr-auto li:hover > ul.dropdown-menu {
-    display: block;
-}
-.dropdown-submenu {
-    position:relative;
-}
-.dropdown-submenu>.dropdown-menu {
-    top:0;
-    left:100%;
-    margin-top:-6px;
-}
-
-/* rotate caret on hover */
-.dropdown-menu > li > a:hover:after {
-    text-decoration: underline;
-    transform: rotate(-90deg);
-} 
-
-        .dropdown-menu a:hover {
-            color: blue!important;
-            cursor: pointer;
+        .dropdown:hover > .dropdown-menu {
+            display: block;
         }
 
-   </style>
+        .navbar-nav.mr-auto li:hover > ul.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+            .dropdown-submenu > .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top: -6px;
+            }
+
+        /* rotate caret on hover */
+        .dropdown-menu > li > a:hover:after {
+            text-decoration: underline;
+            transform: rotate(-90deg);
+        }
+
+        .dropdown-menu a:hover {
+            color: blue !important;
+            cursor: pointer;
+        }
+    </style>
 
     <form id="Form1" runat="server">
 
@@ -83,6 +84,10 @@
             <!--ul class="collapse navbar-collapse" id="navbarSupportedContent"-->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active "></li>
+                <li class="dropdown">
+                    <asp:LinkButton ID="LinkButton3" CssClass="nav-link" runat="server" href="./home.aspx">Home </asp:LinkButton>
+
+                </li>
                 <li class="dropdown">
                     <a class="nav-link" target="_blank" href="https://dell.service-now.com/nav_to.do?uri=%2Fhome.do%3F">Service Now</a>
                 </li>
@@ -104,21 +109,21 @@
 
                 <li class="dropdown">
                     <a class="nav-link" target="_blank" href="http://intranet.dell.com/it/Operations/MIM/Lists/Submit%20a%20MIM%20Alert%20Task%20Production/New_MIMA.aspx">MIM<span class="sr-only">(current)</span></a>
-                </li>           
+                </li>
                 <li class="dropdown">
                     <a href="#" class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">VCE<span class="caret"></span></a>
                     <ul class="dropdown-menu">
 
-                        <li><a class="nav-link" target="_blank" href="../HLA - ACT and xACT 4.0 PROD - FINAL.PDF">ARC Digram</a></li>
-                        <li><a class="nav-link" target="_blank" href="../C3 HLA 5_17 prodv3.pdf">C3 HLA Digram</a></li>
-                        <li><a class="nav-link"  target="_blank" href="../HTMl.htm" >xACT Application Details</a></li>  
-                        <li><a class="nav-link"  target="_blank" href="../ACT_ApplicationDetails.htm">ACT Application Details</a></li>
+                        <li><a class="nav-link" target="_blank" href="../docs/HLA - ACT and xACT 4.0 PROD - FINAL.PDF">ARC Digram</a></li>
+                        <li><a class="nav-link" target="_blank" href="../docs/C3 HLA 5_17 prodv3.pdf">C3 HLA Digram</a></li>
+                        <li><a class="nav-link" target="_blank" href="../html/HTMl.htm">xACT Application Details</a></li>
+                        <li><a class="nav-link" target="_blank" href="../html/ACT_ApplicationDetails.htm">ACT Application Details</a></li>
                         <li><a class="nav-link" target="_blank" href="https://xact.emc.com/act/dct">Advanced Configuration Tool (ACT)</a></li>
                         <li><a class="nav-link" target="_blank" href="https://xact.emc.com/dnm/design-base-app/workspace.my-designs">xACT Black</a></li>
                         <li><a class="nav-link" target="_blank" href="https://xact.emc.com/dnm/dea/#/designElement">xACT Blue</a></li>
                         <li><a class="nav-link" target="_blank" href="https://xact.emc.com/BOE/BI">XACT-BOBJ application</a></li>
                         <li><a class="nav-link" target="_blank" href="https://c3.admin.vce.com/c3/admin-app/active">C3-Customer Configuration Center (Admin application)</a></li>
-                        <li><a class="nav-link" target="_blank" href="https://wiki.ent.vce.com/dashboard.action">Wiki application</a></li>
+                        <%--<li><a class="nav-link" target="_blank" href="https://wiki.ent.vce.com/dashboard.action">Wiki application</a></li>--%>
                         <li><a class="nav-link" target="_blank" href="http://vcerpconfig03.isus.emc.com:1100/logviewer/applogs.jsp">Server urls</a></li>
                         <li><a class="nav-link" target="_blank" href="https://xact.emc.com/dnm/design-base-app/workspace.my-designs">ACT- Design based(Black application)</a></li>
                         <li><a class="nav-link" target="_blank" href="https://zabbix.isus.emc.com/dashboard.php">Zabbix</a></li>
@@ -184,8 +189,8 @@
 
                 <li class="dropdown"><a href="#" class="nav-link  dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Pega KPI<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="nav-link" target="_blank" href="http://corpusclb2b1.corp.emc.com/pegadashboard/Queues.aspx">KPI Dashboard</a></li>
-                        <li><a class="nav-link" target="_blank" href="http://durclb2bprd01/PegaDashboard/Notifications.aspx">KPI Dashboard New Link</a></li>
+                       <%-- <li><a class="nav-link" target="_blank" href="http://corpusclb2b1.corp.emc.com/pegadashboard/Queues.aspx">KPI Dashboard</a></li>--%>
+                        <li><a class="nav-link" target="_blank" href="http://durclb2bprd01/PegaDashboard/">KPI Dashboard</a></li>
                         <li><a class="nav-link" target="_blank" href="https://bpmappprf09.isus.emc.com:8443/prweb/PRServlet">Alert and Exception</a></li>
                         <li><a class="nav-link" target="_blank" href="https://corperoom02.corp.emc.com/eRoom/MandA/iBPAPegaCOE">Eroom link</a></li>
                     </ul>
@@ -194,15 +199,24 @@
                 <li class="dropdown"><a href="#news" class="nav-link  dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Contacts<span class="caret"></span></a>
                     <ul class="dropdown-menu">
 
+                        <li>
+                            <asp:LinkButton ID="LinkButton1" CssClass="nav-link" runat="server" OnClick="VCEContacts_Click">VCE Contacts</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton ID="LinkButton4" CssClass="nav-link" runat="server" OnClick="PegaContacts_Click">Pega Contacts</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton ID="LinkButton5" CssClass="nav-link" runat="server" OnClick="ZabbixContacts_Click">Zabbix Contacts</asp:LinkButton></li>
 
-                        <li><a class="nav-link" href="#table1" id="Cvce" onclick="tab(this)">VCE Contacts</a></li>
-                        <li><a class="nav-link" href="#table2" id="Cpega" onclick="tab(this)">Pega Contacts</a></li>
-                        <li><a class="nav-link" href="#table3" id="Czabbix" onclick="tab(this)">Zabbix Contacts</a></li>
+                        <%--                       <li><a class="nav-link" id="Cvce" onclick="VCEContacts_Click">VCE Contacts</a></li>
+                        <li><a class="nav-link" id="Cpega" onclick="PegaContacts_Click">Pega Contacts</a></li>
+                        <li><a class="nav-link" id="Czabbix" onclick="ZabbixContacts_Click">Zabbix Contacts</a></li>--%>
                     </ul>
                 </li>
 
                 <li class="dropdown">
                     <asp:LinkButton ID="LinkButton23" CssClass="nav-link" runat="server" OnClick="LinkButton23_Click">Shift Roster</asp:LinkButton>
+                </li>
+                <li class="dropdown">
+                    <asp:LinkButton ID="LinkButton2" CssClass="nav-link" runat="server">Schedule Changes </asp:LinkButton>
                 </li>
             </ul>
 
@@ -219,7 +233,7 @@
             </ajaxToolkit:AutoCompleteExtender>
             &nbsp;&nbsp;
             <div>
-                <asp:Image ID="Image1" runat="server" CssClass="im" ImageUrl="~/Del.png" />
+                <asp:Image ID="Image1" runat="server" CssClass="im" ImageUrl="~/pics/Del.png" />
             </div>
 
             <asp:Button ID="Button1" class="btn btn-outline-primary my-2 my-sm-0" runat="server" Visible="false" Text="Search" OnClick="Button1_Click1" />
@@ -230,12 +244,13 @@
         <br />
         <asp:Panel ID="roster" runat="server" Visible="false">
             <div>
-                 <td>
-                <asp:LinkButton CssClass="navbar-nav" runat="server" ID="LinkButton1" Text="HOME" href="./home.aspx" BorderColor="White" Font-Bold="false"  ForeColor="White" OnClick="LinkButton1_Click">
+                <%--<td>
+                    <asp:LinkButton CssClass="navbar-nav" runat="server" ID="LinkButton1" Text="HOME" href="./home.aspx" BorderColor="White" Font-Bold="false" ForeColor="White" OnClick="LinkButton1_Click">
                    
-                </asp:LinkButton>
+                    </asp:LinkButton>
 
-            </td>&nbsp;&nbsp;
+                </td>--%>
+                &nbsp;&nbsp;
                
 
                 <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="280px">
@@ -247,10 +262,10 @@
                     <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
                     <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
                     <WeekendDayStyle BackColor="#CCCCFF" />
-                      </asp:Calendar>
+                </asp:Calendar>
             </div>
             <div style="position: relative; left: 300px; margin-top: -200px;">
-                 <asp:GridView ID="GridView1" runat="server"
+                <asp:GridView ID="GridView1" runat="server"
                     AutoGenerateColumns="True" ShowFooter="True" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="Horizontal" EnableSortingAndPagingCallbacks="True" OnPageIndexChanging="GridView1_PageIndexChanging" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" PageSize="10" OnLoad="Page_Load">
                     <EmptyDataTemplate>
                         Roster Not Available.
@@ -271,16 +286,16 @@
 
 
         </asp:Panel>
+        <asp:Panel ID="VcePanel" runat="server" Visible="false">
 
 
-        <div id="table1" style="display: none">
 
-            <td>
+            <%--<td>
                 <asp:LinkButton CssClass="navbar-nav" runat="server" ID="LinkButton27" Text="HOME" href="./home.aspx" BorderColor="SpringGreen" Font-Bold="false">
                        
                 </asp:LinkButton>
 
-            </td>
+            </td>--%>
 
             <table style="width: 100%" class="table-inverse table-bordered table-sm">
 
@@ -419,23 +434,23 @@
 
                 </tr>
 
-
             </table>
 
 
-        </div>
+
+        </asp:Panel>
 
         <pre>
 
 </pre>
+        <asp:Panel ID="PegaPanel" runat="server" Visible="false">
 
-        <div id="table2" style="display: none">
-            <td>
+            <%--<td>
                 <asp:LinkButton CssClass="navbar-nav" runat="server" ID="LinkButton26" Text="HOME" href="./home.aspx" BorderColor="SpringGreen" Font-Bold="false">
                        
                 </asp:LinkButton>
 
-            </td>
+            </td>--%>
 
             <table style="width: 100%" class="table-inverse table-bordered table-sm">
                 <tr>
@@ -456,15 +471,15 @@
                     <td>SALESFORCE (EMC) - Customer Service</td>
                     <td>
 
-                        <a href="mailto:service.cloud.team@emc.com">service.cloud.team@emc.com</a>
-                        <%--<td>service.cloud.team@emc.com</td>--%>
-                        <td>SALESFORCE (EMC) - Customer Service</td>
+                        <a href="mailto:service.cloud.team@emc.com">service.cloud.team@emc.com</a> </td>
+                    <%--<td>service.cloud.team@emc.com</td>--%>
+                    <td>SALESFORCE (EMC) - Customer Service</td>
                 </tr>
                 <tr>
                     <td>Middleware Team</td>
                     <td>OpsIT Cloud - Platform Middleware Services</td>
                     <%--<td>SO.GSOC.CloudOps.Middleware@emc.com</td>--%>
-                    <a href="mailto:SO.GSOC.CloudOps.Middleware@emc.com">SO.GSOC.CloudOps.Middleware@emc.com</a>
+                    <td><a href="mailto:SO.GSOC.CloudOps.Middleware@emc.com">SO.GSOC.CloudOps.Middleware@emc.com</a></td>
                     <td>OpsIT Cloud - Platform Middleware Services</td>
                     <td></td>
                 </tr>
@@ -475,7 +490,7 @@
                     <td>CIC INTEGRATION</td>
                     <td>AIC - IPAAS</td>
                     <%--<td>so.gsoc.cloudops.integrations@emc.com</td>--%>
-                    <a href="mailto:so.gsoc.cloudops.integrations@emc.com">so.gsoc.cloudops.integrations@emc.com</a>
+                    <td><a href="mailto:so.gsoc.cloudops.integrations@emc.com">so.gsoc.cloudops.integrations@emc.com</a></td>
                     <td>AIC - CASE SERVICE CRM</td>
                 </tr>
 
@@ -484,7 +499,7 @@
                     <td>OpsIT Cloud Data Lake MSP Tier2</td>
                     <td>Business Data Lake (BDL)</td>
                     <%--<td>bdl.triage.support@emc.com</td>--%>
-                    <a href="mailto:bdl.triage.support@emc.com">bdl.triage.support@emc.com</a>
+                    <td><a href="mailto:bdl.triage.support@emc.com">bdl.triage.support@emc.com</a></td>
                     <td>Business Data Lake (BDL)</td>
                 </tr>
 
@@ -493,7 +508,7 @@
                     <td>OpsIT App CS Web</td>
                     <td>SUPPORT.EMC.COM</td>
                     <%--<td>ols.dl@emc.com</td>--%>
-                    <a href="mailto:ols.dl@emc.com">ols.dl@emc.com</a>
+                    <td><a href="mailto:ols.dl@emc.com">ols.dl@emc.com</a></td>
                     <td>SUPPORT.EMC.COM</td>
                 </tr>
 
@@ -501,7 +516,7 @@
                     <td>SABA</td>
                     <td></td>
                     <%--<td>rajkamal.lakra@emc.com</td>--%>
-                    <a href="mailto:rajkamal.lakra@emc.com">rajkamal.lakra@emc.com</a>
+                    <td><a href="mailto:rajkamal.lakra@emc.com">rajkamal.lakra@emc.com</a></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -509,7 +524,7 @@
                     <td>SwarmIssue/Oracle/Wipro Mapping</td>
                     <td></td>
 
-                    <a href="mailto:pega.ims@emc.com">pega.ims@emc.com</a>
+                    <td><a href="mailto:pega.ims@emc.com">pega.ims@emc.com</a></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -517,7 +532,7 @@
                 <tr>
                     <td>SR Notifications/CRU Shipment Notification/Onsite Field Notifications</td>
                     <td></td>
-                    <a href="mailto:pega.nsp@emc.com">pega.nsp@emc.com</a>
+                    <td><a href="mailto:pega.nsp@emc.com">pega.nsp@emc.com</a></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -534,17 +549,18 @@
 
 </pre>
 
-        </div>
+
+        </asp:Panel>
+        <asp:Panel ID="ZabbixPanel" runat="server" Visible="false">
 
 
-        <div id="table3" style="display: none">
 
-            <td>
+            <%--<td>
                 <asp:LinkButton CssClass="navbar-nav" runat="server" ID="LinkButton28" Text="HOME" href="./home.aspx" BorderColor="SpringGreen" Font-Bold="false">
                        
                 </asp:LinkButton>
 
-            </td>
+            </td>--%>
 
             <table style="width: 100%" class="table-inverse table-bordered table-sm">
 
@@ -576,6 +592,7 @@
                 <tr>
                     <td>vcec3mgoprd01
                         <br>
+                        shoft
                         vcec3mgoprd02
                         <br>
                         vcec3mgoprd03
@@ -598,8 +615,8 @@
 
 
 </pre>
-        </div>
 
+        </asp:Panel>
 
         <div id='myenDiv' visible="false" runat="server">
 

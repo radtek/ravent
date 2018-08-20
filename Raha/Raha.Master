@@ -173,7 +173,7 @@
                 </li>
                 <li class="dropdown"><a href="#" class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Pega IMS & NSP<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">LogViewer</a>
+                        <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">IMSLogViewer</a>
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" target="_blank" href="https://bpmappprd01.isus.emc.com:8453/logviewer/8443.jsp">IMS01</a></li>
                                 <li><a class="nav-link" target="_blank" href="https://bpmappprd02.isus.emc.com:8453/logviewer/8443.jsp">IMS02</a></li>
@@ -184,6 +184,17 @@
                                 <li><a class="nav-link" target="_blank" href="https://bpmappprd07.isus.emc.com:8453/logviewer/8443.jsp">IMS07</a></li>
                                 <li><a class="nav-link" target="_blank" href="https://bpmappprd08.isus.emc.com:8453/logviewer/8443.jsp">IMS08</a></li>
                             </ul>
+                        </li>
+                        <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">NSPLogViewer</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" target="_blank" href="https://nasappprd01.isus.emc.com:8443/logviewer/8443.jsp">NSP01</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://nasappprd02.isus.emc.com:8443/logviewer/8443.jsp">NSP02</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://nasappprd03.isus.emc.com:8443/logviewer/8443.jsp">NSP03</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://nasappprd04.isus.emc.com:8443/logviewer/8443.jsp">NSP04</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://nasappprd05.isus.emc.com:8443/logviewer/8443.jsp">NSP05</a></li>
+                                <li><a class="nav-link" target="_blank" href="https://nasappprd06.isus.emc.com:8443/logviewer/8443.jsp">NSP06</a></li>
+                            </ul>
+
                         </li>
                         <li><a class="nav-link" target="_blank" href="http://www.thetimezoneconverter.com/">Time Converter</a></li>
                         <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" href="#">IMS</a>
@@ -215,7 +226,7 @@
                 <li class="dropdown"><a href="#" class="nav-link  dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Pega KPI<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <%--<li><a class="nav-link" target="_blank" href="http://corpusclb2b1.corp.emc.com/pegadashboard/Queues.aspx">KPI Dashboard</a></li>--%>                  
-                        <li><a class="nav-link" target="_blank" href="http://durclb2bprd01/PegaDashboard/">KPI Dashboard New Link</a></li>                       
+                        <li><a class="nav-link" target="_blank" href="http://durclb2bprd01/PegaDashboard/">KPI Dashboard</a></li>                       
                         <li><a class="nav-link" target="_blank" href="https://bpmappprf09.isus.emc.com:8443/prweb/PRServlet">Alert and Exception</a></li>
                         <li><a class="nav-link" target="_blank" href="https://corperoom02.corp.emc.com/eRoom/MandA/iBPAPegaCOE">Eroom link</a></li>
                     </ul>
@@ -226,7 +237,7 @@
                         <li><a class="nav-link" href="Contacts.aspx?contact=VCE">VCE Contacts</a></li>
                         <li><a class="nav-link" href="Contacts.aspx?contact=PEGA">Pega Contacts</a></li>
                         <li><a class="nav-link" href="Contacts.aspx?contact=ZABBIX">Zabbix Contacts</a></li>
-                    </ul>
+                   </ul>
                 </li>
                 <li class="dropdown"><a href="#news" class="nav-link  dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Roster<span class="caret"></span></a>
                     <ul class="dropdown-menu">
